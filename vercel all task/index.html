@@ -6,6 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task Report - Ujjwal Aggarwal</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        p {
+    color: white !important;
+}
+
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .user-info h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #ffffff;
+        }
+
+        .user-info p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #cccccc;
+        }
+
+        .title {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #66b2ff;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .task {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .task h3 {
+            margin: 0;
+            background-color: #272727;
+            color: #ffffff;
+            padding: 15px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .task h3:hover {
+            background-color: #333;
+        }
+
+        .task-content {
+            padding: 15px 20px;
+            display: none;
+            border-top: 1px solid #333;
+        }
+
+        .task-content p {
+            margin: 12px 0;
+        }
+
+        .task-content img {
+            max-width: 100%;
+            border-radius: 6px;
+            margin: 10px 0;
+            border: 1px solid #444;
+            box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            color: #aaa;
+            text-align: center;
+            padding: 12px;
+            border-top: 1px solid #333;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,40 +108,52 @@
 
     <main>
         <section class="task">
-            <h3>Task 1: Download Terraform and installation</h3>
-            <p>Dowloded Terraform from offcial website </p>
-            <img src="img/terraform install.jpg" alt="Task 1 Screenshot" />
-            <p>Setting up ENVIRONMENT VARIABLE for TERRAFORM </p>
-
-            <img src="img/setting env variable.jpg" alt="Task 2 Screenshot" />
-            <p>Verifying the installation of Terraform & checking version</p>
-            <img src="img/cmd worked.jpg" alt="Task 3 Screenshot" />
-            <!-- <img src="images/task1.png" alt="Task 4 Screenshot" /> -->
-
+            <h3 onclick="toggle(this)">Task 1: Download Terraform and Installation</h3>
+            <div class="task-content">
+                <p>1. Downloaded Terraform from the official website.</p>
+                <img src="img/terraform install.jpg" alt="Terraform Installation" />
+                <p>2. Set up environment variables for Terraform.</p>
+                <img src="img/setting env variable.jpg" alt="Environment Variable Setup" />
+                <p>3. Verified the installation and checked the version.</p>
+                <img src="img/cmd worked.jpg" alt="Command Line Output" />
+            </div>
         </section>
 
         <section class="task">
-            <h3>Task 2: Launch a secure Ubuntu EC2 instance in AWS Using Terraform</h3>
-            <p>Fetched data from a REST API and rendered it on the page.</p>
-            <img src="images/task2.png" alt="Task 2 Screenshot" />
+            <h3 onclick="toggle(this)">Task 2: Launch a Secure Ubuntu EC2 Instance Using Terraform</h3>
+            <div class="task-content">
+                <p>Created and launched an EC2 instance securely using Terraform.</p>
+                <img src="img/task2.png" alt="EC2 Instance Screenshot" />
+            </div>
         </section>
 
         <section class="task">
-            <h3>Task 3: Cloud Infrastructure Task Assignment: AWS + Vercel Showcase </h3>
-            <p>Improved the user interface with clean CSS and responsive layout.</p>
-            <img src="images/task3.png" alt="Task 3 Screenshot" />
+            <h3 onclick="toggle(this)">Task 3: Cloud Infrastructure Task Assignment - AWS + Vercel Showcase</h3>
+            <div class="task-content">
+                <p>Improved the user interface with clean CSS and hosted the project using Vercel.</p>
+                <img src="img/task3.png" alt="Vercel Showcase Screenshot" />
+            </div>
         </section>
 
-        <!-- <section class="task">
-            <h3>Task 4: Authentication</h3>
-            <p>Added login functionality and secured access using local storage.</p>
-            <img src="images/task4.png" alt="Task 4 Screenshot" />
-        </section> -->
+        <section class="task">
+            <h3 onclick="toggle(this)">Task 4: Authentication</h3>
+            <div class="task-content">
+                <p>Implemented login functionality and secured access using local storage.</p>
+                <img src="img/task4.png" alt="Authentication Screenshot" />
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Ujjwal Aggarwal</p>
     </footer>
+
+    <script>
+        function toggle(header) {
+            const content = header.nextElementSibling;
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+    </script>
 </body>
 
 </html>
