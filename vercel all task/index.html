@@ -104,10 +104,18 @@
             <p>Roll No: 13 | Section: 007 | ID: 12001083</p>
         </div>
         <h2 class="title">Task Report</h2>
+        <div class="nav-links">
+            <a style="color:white" href="#task1" target="_blank">Task 1</a> |
+            <a style="color:white"  href="#task2" target="_blank">Task 2</a> |
+            <a style="color:white"href="#task3" target="_blank">Task 3</a> |
+            <a style="color:white" href="#task4" target="_blank">Task 4</a>
+            <a style="color:white" href="#task5" target="_blank">Task 5</a> |
+            <a style="color:white" href="#task6" target="_blank">Task 6</a>
+        </div>
     </header>
 
     <main>
-        <section class="task">
+        <section id="task1"class="task">
             <h3 onclick="toggle(this)">Task 1: Download Terraform and Installation</h3>
             <div class="task-content">
                 <p>1. Downloaded Terraform from the official website.</p>
@@ -119,24 +127,50 @@
             </div>
         </section>
 
-        <section class="task">
+        <section  id="task2" class="task">
             <h3 onclick="toggle(this)">Task 2: Launch a Secure Ubuntu EC2 Instance Using Terraform</h3>
             <div class="task-content">
+                <p>Created a terraform project file.</p>
+                <img src="img/task 2 1.jpg" alt="EC2 Instance Screenshot" />
+                <p>Inside main.tf file.</p>
+                <img src="img/task 2 2.jpg" alt="EC2 Instance Screenshot" />
+                <p>Inside main.tf file.</p>
+                <img src="img/task 2 3.jpg" alt="EC2 Instance Screenshot" />
+                <p>Inside main.tf file.</p>
+                <img src="img/task 2 4.jpg" alt="EC2 Instance Screenshot" />
                 <p>Created and launched an EC2 instance securely using Terraform.</p>
-                <img src="img/task2.png" alt="EC2 Instance Screenshot" />
+                <img src="img/task 2 5.jpg" alt="EC2 Instance Screenshot" />
             </div>
         </section>
 
-        <section class="task">
+        <section id="task3" class="task">
             <h3 onclick="toggle(this)">Task 3: Cloud Infrastructure Task Assignment - AWS + Vercel Showcase</h3>
             <div class="task-content">
-                <p>Improved the user interface with clean CSS and hosted the project using Vercel.</p>
-                <img src="img/task3.png" alt="Vercel Showcase Screenshot" />
+                <p>Created a vercel account.</p>
+                <img src="img/task31.jpg" alt="Vercel Showcase Screenshot" />
+                <p>Hosted vercel Showcase of AWS task</p>
+                <img src="img/task32.jpg" alt="Vercel Showcase Screenshot" />
+                <p>the live hosted websit for showcasing aws all task</p>
+                <img src="img/task33.jpg" alt="Vercel Showcase Screenshot" />
             </div>
         </section>
 
-        <section class="task">
+        <section id="task4"  class="task">
             <h3 onclick="toggle(this)">Task 4: Authentication</h3>
+            <div class="task-content">
+                <p>Implemented login functionality and secured access using local storage.</p>
+                <img src="img/task4.png" alt="Authentication Screenshot" />
+            </div>
+        </section>
+        <section id="task5" class="task">
+            <h3 onclick="toggle(this)">Task 5: PRICING CALCULATION</h3>
+            <div class="task-content">
+                <p>Implemented login functionality and secured access using local storage.</p>
+                <img src="img/task4.png" alt="Authentication Screenshot" />
+            </div>
+        </section>
+        <section id="task6" class="task">
+            <h3 onclick="toggle(this)">Task 6: AWS PRICING</h3>
             <div class="task-content">
                 <p>Implemented login functionality and secured access using local storage.</p>
                 <img src="img/task4.png" alt="Authentication Screenshot" />
@@ -149,11 +183,52 @@
     </footer>
 
     <script>
-        function toggle(header) {
-            const content = header.nextElementSibling;
-            content.style.display = content.style.display === "block" ? "none" : "block";
-        }
-    </script>
+            // function toggle(header, expand = false) {
+            //     const content = header.nextElementSibling;
+            //     if (expand) {
+            //         content.style.display = "block";
+            //     } else {
+            //         content.style.display = content.style.display === "block" ? "none" : "block";
+            //     }
+            // }
+    
+            // window.onload = function () {
+            //     const hash = window.location.hash;
+            //     if (hash) {
+            //         const taskSection = document.querySelector(hash);
+            //         if (taskSection) {
+            //             const header = taskSection.querySelector('h3');
+            //             if (header) toggle(header, true);
+            //             taskSection.scrollIntoView({ behavior: 'smooth' });
+            //         }
+            //     }
+            // };
+            function toggle(header, expand = false) {
+                    const content = header.nextElementSibling;
+                    if (expand) {
+                        content.style.display = "block";
+                    } else {
+                        content.style.display = content.style.display === "block" ? "none" : "block";
+                    }
+                }
+
+                function openTaskByHash() {
+                    const hash = window.location.hash;
+                    if (hash) {
+                        const taskSection = document.querySelector(hash);
+                        if (taskSection) {
+                            const header = taskSection.querySelector('h3');
+                            if (header) toggle(header, true);
+                            taskSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                }
+
+                document.addEventListener('DOMContentLoaded', openTaskByHash);
+                window.addEventListener('hashchange', openTaskByHash);
+
+        </script>
 </body>
 
 </html>
+
